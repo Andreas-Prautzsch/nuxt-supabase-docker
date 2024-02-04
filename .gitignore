@@ -1,0 +1,26 @@
+.env
+
+# Generally ignore everything in the 'volumes' directory
+volumes/*
+
+# Do not ignore the following directories within 'volumes'
+!volumes/db
+!volumes/functions
+!volumes/api
+
+# Ignore everything else in the 'volumes/db', 'volumes/functions', and 'volumes/api' directories
+volumes/db/*
+volumes/functions/*
+volumes/api/*
+
+# Allow specific initialization files in the 'volumes/db' directory
+!volumes/db/realtime.sql
+!volumes/db/webhooks.sql
+!volumes/db/roles.sql
+!volumes/db/jwt.sql
+
+# Do not ignore the main function file in 'volumes/functions'
+!volumes/functions/main
+
+# Do not ignore the Kong configuration file in 'volumes/api'
+!volumes/api/kong.yml
